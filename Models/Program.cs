@@ -15,11 +15,11 @@ class Program
     int forQuestions = newInstance.AskQuestions(min, max); 
     string inputedNumber = Console.ReadLine(); 
     
-    if (inputedNumber == "Higher" ) {
+    if (inputedNumber.ToLower() == "higher" ) {
        max = forQuestions;
 
-    } else if (inputedNumber == "Lower") {
-       min = forQuestions;
+    } else if (inputedNumber.ToLower() == "lower") {
+       min = forQuestions+1;
     } else {
        Console.WriteLine("you win"); 
        repeat = false;
