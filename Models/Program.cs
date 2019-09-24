@@ -1,22 +1,5 @@
 using System;
-
-
-
-class HigherLower {
- 
-public static int GenerateRandomNumbers(int min, int max) {
-   Random rnd = new Random();
-   int number = rnd.Next(min, max);
-   return number;
-}
-public static int AskQuestions(int min, int max) {
-    int randomNum = HigherLower.GenerateRandomNumbers(min, max);
-    Console.WriteLine(randomNum);
-    Console.WriteLine("Is this number is Higher or lower than the guessed number?");
-    return randomNum;
-}
-}
-
+using Game;
 class Program
 {
   static void Main()
@@ -27,9 +10,9 @@ class Program
     int max = 101;
     int min = 1;
     bool repeat = true;
-
+    HigherLower newInstance = new HigherLower();
     while (repeat) {
-    int forQuestions = HigherLower.AskQuestions(min, max); 
+    int forQuestions = newInstance.AskQuestions(min, max); 
     string inputedNumber = Console.ReadLine(); 
     
     if (inputedNumber == "Higher" ) {
